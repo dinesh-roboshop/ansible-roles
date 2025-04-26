@@ -29,7 +29,7 @@
 - name: Loading schema
   ansible.builtin.shell: "mysql -h {{MYSQL_HOST}} -uroot -pRoboShop@1 < /app/schema/shipping.sql"
   notify:
-    name: restart-shipping
+    - name: restart-shipping
 
 
 
