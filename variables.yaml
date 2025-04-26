@@ -8,3 +8,4 @@ CART_HOST: cart.dineshdevops.shop
 SHIPPING_HOST: shipping.dineshdevops.shop
 PAYMENT_HOST: payment.dineshdevops.shop
 DISPATCH_HOST: dispatch.dineshdevops.shop
+DIRECTORY: /root/ansible-roles

@@ -1,0 +1,2 @@
+- name: Download dependencies
+  ansible.builtin.shell: cd /app ; npm install

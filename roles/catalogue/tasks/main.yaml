@@ -1,0 +1,20 @@
+- name: NodeJS Install
+  ansible.builtin.import_role:
+    name: common
+    tasks_from: nodejs-install
+- name: App setup
+  ansible.builtin.import_role:
+    name: common
+    tasks_from: app-setup
+- name: Download java dependencies   
+  ansible.builtin.import_role:
+    name: common
+    tasks_from: java-app
+- name: Service configure
+  ansible.builtin.import_role:
+    name: commom
+    tasks_from: service-configure
+- name: Loading schema
+  ansible.builtin.import_role:
+    name: common
+    tasks_from: mongo-schema
