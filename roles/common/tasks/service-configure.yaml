@@ -1,5 +1,5 @@
 - name: Copying "{{COMPONENT}}".service file
-  ansible.builtin.copy:
+  ansible.builtin.template:
      src: "{{COMPONENT}}".service.j2
      dest: /etc/systemd/system/"{{COMPONENT}}".service
 - name: Reloading systemctl daemon
