@@ -1,11 +1,11 @@
-- name: Copying "{{COMPONENT}}".service file
+- name: "Copying {{COMPONENT}}.service file"
   ansible.builtin.template:
-     src: "{{COMPONENT}}".service.j2
-     dest: /etc/systemd/system/"{{COMPONENT}}".service
+     src: "{{COMPONENT}}.service.j2"
+     dest: "/etc/systemd/system/{{COMPONENT}}.service"
 - name: Reloading systemctl daemon
   ansible.builtin.systemd_service:
     daemon_reload: true
-- name: Start and enable "{{COMPONENT}}" service
+- name:"Start and enable {{COMPONENT}} service"
   ansible.builtin.service:
      name: "{{COMPONENT}}"
      state: started

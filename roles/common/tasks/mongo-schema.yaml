@@ -1,4 +1,4 @@
-- name: Copying "{{COMPONENT}}".repo file
+- name: "Copying {{COMPONENT}}.repo file"
   ansible.builtin.copy:
       src: mongo.repo
       dest: /etc/yum.repos.d/mongo.repo
@@ -7,4 +7,4 @@
      name: mongodb-org-shell
      state: present
 - name: Loading schema
-  ansible.builtin.shell: mongo --host "{{MONDODB_HOST}}" </app/schema/"{{COMPONENT}}".js
+  ansible.builtin.shell: "mongo --host {{MONDODB_HOST}} </app/schema/{{COMPONENT}}.js"
