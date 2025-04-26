@@ -1,0 +1,4 @@
+- name: Installing golang package
+  ansible.builtin.package:
+    name: golang
+    state: installed

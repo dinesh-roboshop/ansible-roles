@@ -1,0 +1,2 @@
+- name: Download dependencies
+  ansible.builtin.shell: cd /app ; go mod init dispatch ; go get ; go build

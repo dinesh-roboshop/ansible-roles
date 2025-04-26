@@ -1,0 +1,16 @@
+- name: Installing python
+  ansible.builtin.import_role:
+    name: common
+    tasks_from: python-install
+- name: App configure
+  ansible.builtin.import_role:
+    name: common
+    tasks_from: app-setup
+- name: Download dependencies
+  ansible.builtin.import_role:
+    name: common
+    tasks_from: python-configure
+- name: Service configure
+  ansible.builtin.import_role:
+    name: common
+    tasks_from: service-configure

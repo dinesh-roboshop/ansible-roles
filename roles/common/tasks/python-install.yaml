@@ -1,0 +1,7 @@
+- name: Installing python packages
+  ansible.builtin.package:
+    name:
+      - python36
+      - gcc
+      - python3-devel
+    state: installed

@@ -1,0 +1,16 @@
+- name: Installing GOlang
+  ansible.builtin.import_role:
+    name: common
+    tasks_from: golang-install
+- name: App configure
+  ansible.builtin.import_role:
+    name: common
+    tasks_from: app-setup
+- name: Download dependencies
+  ansible.builtin.import_role:
+    name: common
+    tasks_from: golang-configure
+- name: Service configure
+  ansible.builtin.import_role:
+    name: common
+    tasks_from: service-configure
