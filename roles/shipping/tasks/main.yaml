@@ -22,10 +22,10 @@
   ansible.builtin.package:
     name: mysql
     state: installed
-- name: Copying schema directory to /app
-  ansible.builtin.copy:
-    src: "{{DIRECTORY}}/schema"
-    dest: /app
+#- name: Copying schema directory to /app
+#  ansible.builtin.copy:
+#    src: "{{DIRECTORY}}/schema"
+#    dest: /app
 - name: Loading schema
   ansible.builtin.shell: "mysql -h {{MYSQL_HOST}} -uroot -pRoboShop@1 < /app/schema/shipping.sql"
   notify:
