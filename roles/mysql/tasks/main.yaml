@@ -1,7 +1,7 @@
 - name: Installing mysql
   ansible.builtin.import_role:
     name: common
-    tasks-from: mysql-install
+    tasks_from: mysql-install
 - name: Start and enable mysql service
   ansible.builtin.service:
       name: mysqld

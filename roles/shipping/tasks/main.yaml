@@ -20,10 +20,10 @@
     state: installed
 - name: Copying schema directory to /app
   ansible.builtin.copy:
-    src: "{{DIRECTORY}}"/schema
+    src: "{{DIRECTORY}}/schema"
     dest: /app
 - name: Loading schema
-  ansible.builtin.shell: mysql -h "{{MYSQL_HOST}}" -uroot -pRoboShop@1 < /app/schema/shipping.sql
+  ansible.builtin.shell: "mysql -h {{MYSQL_HOST}} -uroot -pRoboShop@1 < /app/schema/shipping.sql"
   notify:
     name: restart-shipping
 
