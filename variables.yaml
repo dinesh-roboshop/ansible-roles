@@ -1,0 +1,10 @@
+MONGODB_HOST: mongodb.dineshdevops.shop # submit your host
+REDIS_HOST: redis.dineshdevops.shop
+MYSQL_HOST: mysql.dineshdevops.shop
+RABBITMQ_HOST: rabbitmq.dineshdevops.shop
+CATALOGUE_HOST: catalogue.dineshdevops.shop
+USER_HOST: user.dineshdevops.shop
+CART_HOST: cart.dineshdevops.shop
+SHIPPING_HOST: shipping.dineshdevops.shop
+PAYMENT_HOST: payment.dineshdevops.shop
+DISPATCH_HOST: dispatch.dineshdevops.shop

@@ -1,0 +1,7 @@
+- name: "Installing and configuring {{COMPONENT}}"
+  hosts: "{{COMPONENT}}"
+  become: yes
+  vars_files:
+     - /root/ansible-roles/variables.yaml
+  roles:
+   - role: "{{COMPONENT}}"
