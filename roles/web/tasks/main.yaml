@@ -1,32 +1,28 @@
-- name: Install nginx
-    ansible.builtin.package:
-       name: nginx
-       state: present
-  - name: Starting and Enabling nginx service
-    ansible.builtin.service:
-       name: nginx
-       state: started
-       enabled: yes
-  - name: Deleting html directory of nginx
-    ansible.builtin.file:
-     path: /usr/share/nginx/html
-     state: absent
-  - name: Creating html directory
-    ansible.builtin.file:
-     path: /usr/share/nginx/html
-     state: directory
-  - name: Download frontend content
-    ansible.builtin.get_url:
-      url: https://roboshop-builds.s3.amazonaws.com/web.zip
-      dest: /tmp
-  - name: Extract the frontend code
-    ansible.builtin.unarchive:
-      src: /tmp/web.zip
-      dest: /usr/share/nginx/html
-      remote_src: yes
-  - name: Copying roboshop.conf file
-    ansible.builtin.copy:
-      src: roboshop.conf.j2
-      dest: /etc/nginx/default.d/roboshop.conf
-    notify: 
-      - restart nginx
+- name: Starting and Enabling nginx service
+  ansible.builtin.service:
+     name: nginx
+     state: started
+     enabled: yes
+- name: Deleting html directory of nginx
+  ansible.builtin.file:
+   path: /usr/share/nginx/html
+   state: absent
+- name: Creating html directory
+  ansible.builtin.file:
+   path: /usr/share/nginx/html
+   state: directory
+- name: Download frontend content
+  ansible.builtin.get_url:
+    url: https://roboshop-builds.s3.amazonaws.com/web.zip
+    dest: /tmp
+- name: Extract the frontend code
+  ansible.builtin.unarchive:
+    src: /tmp/web.zip
+    dest: /usr/share/nginx/html
+    remote_src: yes
+- name: Copying roboshop.conf file
+  ansible.builtin.copy:
+    src: roboshop.conf.j2
+    dest: /etc/nginx/default.d/roboshop.conf
+  notify:
+    - restart nginx
