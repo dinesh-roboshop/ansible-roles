@@ -10,7 +10,7 @@
        ansible.builtin.get_url:
         url: "https://roboshop-builds.s3.amazonaws.com/{{COMPONENT}}.zip"
         dest: /tmp
-     - name: "Unzipping "{{COMPONENT}} code"
+     - name: "Unzipping {{COMPONENT}} code"
        ansible.builtin.unarchive:
         src: "/tmp/{{COMPONENT}}.zip"
         dest: /app
