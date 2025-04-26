@@ -1,0 +1,13 @@
+# push-ssh-keys.yaml
+- name: Push SSH Key to Clients
+  hosts: all
+  become: false
+  vars:
+    ssh_pub_key: "{{ lookup('file', '/home/centos/.ssh/id_rsa.pub') }}"
+  tasks:
+    - name: Install SSH Key on clients
+      ansible.builtin.authorized_key:
+        user: centos          # change to your login username if needed
+        state: present
+        key: "{{ ssh_pub_key }}"
+
