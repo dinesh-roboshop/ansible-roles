@@ -7,4 +7,4 @@
      name: mongodb-org-shell
      state: present
 - name: Loading schema
-  ansible.builtin.shell: "mongo --host {{MONDODB_HOST}} </app/schema/{{COMPONENT}}.js"
+  ansible.builtin.shell: "mongo --host {{MONGODB_HOST}} </app/schema/{{COMPONENT}}.js"
