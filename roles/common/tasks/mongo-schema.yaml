@@ -1,6 +1,6 @@
 - name: "Copying {{COMPONENT}}.repo file"
   ansible.builtin.copy:
-      src: mongo.repo
+      src: mongodb.repo
       dest: /etc/yum.repos.d/mongo.repo
 - name: Installing mongodb-org-shell
   ansible.builtin.package:
